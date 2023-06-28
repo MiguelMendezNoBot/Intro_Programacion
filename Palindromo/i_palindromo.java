@@ -1,3 +1,6 @@
+package Palindromo;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class i_palindromo{
     public static void main(String args []){
@@ -37,25 +40,30 @@ public class i_palindromo{
         }
     }
     public static int[] pideNums(){
-        Scanner sc=new Scanner(System.in);
-        int e;
-        int num=1;
-        int cont=0;
-        int[] listNum=new int [30];
-        System.out.println("Ingrese los numeros: ");
-        while(true){
-            num=sc.nextInt();
-            if(num==0){
-                break;
+        try {
+            Scanner sc = new Scanner(System.in);
+            int e;
+            int num = 1;
+            int cont = 0;
+            int[] listNum = new int[30];
+            System.out.println("Ingrese los numeros: ");
+            while (true) {
+                num = sc.nextInt();
+                if (num == 0) {
+                    break;
+                }
+                listNum[cont] = num;
+                cont++;
             }
-            listNum[cont]=num;
-            cont++;
+            int[] listNum2 = new int[cont];
+            for (int j = 0; j < cont; j++) {
+                listNum2[j] = listNum[j];
+            }
+            return listNum2;
+        } catch (InputMismatchException ex) {
+            System.out.println("Fatal error: No puedes meter caracteres, solo numeros. " + ex);
+            return new int[]{};
         }
-        int[] listNum2=new int [cont];
-        for(int j=0; j<cont; j++){
-            listNum2[j]=listNum[j];
-        }
-        return listNum2;
     }
     public static void muestraLista(String[] L){
         for(int i=0; i<L.length; i++){
@@ -76,6 +84,11 @@ public class i_palindromo{
         }
     }
 }
+
+// TODO: If the number is only one digit, it should return the message "no valido"
+/* TODO: Create a method for string values instead of integers: for example: aabba -> "i-palindromo"
+    If the user provides a number, throw an error.
+*/
 
 
 
