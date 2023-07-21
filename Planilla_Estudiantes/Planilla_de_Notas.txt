@@ -1,0 +1,14 @@
+alex
+Varón
+90
+90
+ana
+Mujer
+23
+23
+43
+2
+lisa
+Mujer
+90
+90
