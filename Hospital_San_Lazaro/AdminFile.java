@@ -1,7 +1,7 @@
 import java.io.*;
 public class AdminFile
 {
-    public String clinicalFile = "Hojas_Clinicas/";
+    public String clinicalFile = "";
     File file;
     
     public AdminFile(Patient patient){
