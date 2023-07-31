@@ -58,7 +58,7 @@ public class AdminFile
             wr.write("");
             wr.close();
         }catch(Exception ex){
-            System.out.println("Ocurrio un errorses: " + ex.getMessage());
+            System.out.println("Ocurrio un error: " + ex.getMessage());
         }
     }
     
