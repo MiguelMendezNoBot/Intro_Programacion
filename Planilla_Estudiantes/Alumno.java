@@ -15,15 +15,9 @@ public class Alumno{
         this.exFinal = exFinal;
         this.segInst = segInst;
     }
-    
     public Alumno(){
-        this.name = name;
-        this.gender = gender;
-        this.par1 = par1;
-        this.par2 = par2;
-        this.exFinal = exFinal;
-        this.segInst = segInst;
     }
+    
     public boolean aprobOrNot(){
         boolean bb = false;
         if((par1 + par2)/2 > 50){

@@ -44,16 +44,18 @@ public class MainProgram{
                         System.out.println("No existen alumnos en la lista");
                     }else{
                         for(int i = 0; i < alumList.size(); i++){
-                            System.out.print(alumList.get(i).getName() + ", ");
-                            System.out.print(alumList.get(i).getGender() + ", ");
-                            System.out.print(Integer.toString(alumList.get(i).getPar1()) + ", ");
-                            System.out.print(Integer.toString(alumList.get(i).getPar2()));
-                            if((alumList.get(i).getPar1() + alumList.get(i).getPar2())/2 < 51){
+                            System.out.print(alumList.get(i).getName());
+                            System.out.print(", " + alumList.get(i).getGender());
+                            System.out.print(", " + Integer.toString(alumList.get(i).getPar1()));
+                            System.out.print(", " + Integer.toString(alumList.get(i).getPar2()));
+                            System.out.print(", " + Integer.toString(alumList.get(i).getExFinal()));
+                            System.out.print(", " + Integer.toString(alumList.get(i).getSegInst()));
+                            /*if((alumList.get(i).getPar1() + alumList.get(i).getPar2())/2 < 51){
                                 System.out.print(", " + Integer.toString(alumList.get(i).getExFinal()));
                                 if(alumList.get(i).getExFinal() <51){
                                     System.out.print(", " + Integer.toString(alumList.get(i).getSegInst()));
                                 }
-                            }
+                            }*/
                             System.out.println();
                         }
                     }
