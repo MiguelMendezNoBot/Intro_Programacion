@@ -1,4 +1,4 @@
-public class VideoJuego
+public class VideoJuego implements Entregable
 {
     private String title;
     private double stimatedHours;
@@ -8,7 +8,7 @@ public class VideoJuego
     private static final double STIMATED_HOURS_DEF = 10;
     private static final boolean COMMITED_DEF = false;
     
-    private VideoJuego(){
+    public VideoJuego(){
         this("", STIMATED_HOURS_DEF, "", "");
     }
     public VideoJuego(String title, double stimatedHours){
@@ -19,6 +19,32 @@ public class VideoJuego
         this.stimatedHours = stimatedHours;
         this.gender = gender;
         this.company = company;
+    }
+    
+    public double getStimatedHours(){
+        return stimatedHours;
+    }
+    
+    @Override
+    public void deliver(){
+        committed = true;
+    }
+    @Override 
+    public void repay(){
+        committed = false;
+    }
+    @Override 
+    public boolean isDelivered(){
+        return committed;
+    }
+    @Override
+    public boolean compare(Object a){
+        if(a instanceof VideoJuego){
+            VideoJuego a1 = (VideoJuego) a;
+            return (stimatedHours > a1.getStimatedHours()) ? true : false;
+        }else{
+            return false;
+        }
     }
     
     @Override

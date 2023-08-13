@@ -1,4 +1,4 @@
-public class Serie
+public class Serie implements Entregable
 {
     private String title;
     private int numSeasons;
@@ -19,6 +19,32 @@ public class Serie
         this.numSeasons = numSeasons;
         this.gender = gender;
         this.creator = creator;
+    }
+    
+    public int getNumSeasons(){
+        return numSeasons;
+    }
+    
+    @Override
+    public void deliver(){
+        committed = true;
+    }
+    @Override 
+    public void repay(){
+        committed = false;
+    }
+    @Override 
+    public boolean isDelivered(){
+        return committed;
+    }
+    @Override
+    public boolean compare(Object a){
+        if(a instanceof Serie){
+            Serie a1 = (Serie) a;
+            return (numSeasons > a1.getNumSeasons()) ? true : false;
+        }else{
+            return false;
+        }
     }
     
     @Override
